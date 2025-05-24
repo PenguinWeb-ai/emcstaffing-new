@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EMC Staffing provides expert emergency management consultants for disaster recovery, mitigation planning, and grant management. Connect with qualified professionals within 24-72 hours." />
+    <meta name="keywords" content="emergency management staffing, disaster recovery consultants, FEMA consultants, mitigation planning, grant management, emergency response staffing" />
+    <meta name="author" content="EMC Staffing" />
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="EMC STAFFING - Emergency Management Consultant Staffing" />
+    <meta property="og:description" content="EMC Staffing provides expert emergency management consultants for disaster recovery, mitigation planning, and grant management. Connect with qualified professionals within 24-72 hours." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://emc-staffing.com" />
+    <meta property="og:image" content="https://emc-staffing.com/social.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />    
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EMC STAFFING - Emergency Management Consultant Staffing" />
+    <meta name="twitter:description" content="EMC Staffing provides expert emergency management consultants for disaster recovery, mitigation planning, and grant management." />
+    <meta name="twitter:image" content="https://emc-staffing.com/social.jpg" />
+
+    <!-- Apple/iMessage fallback image tag -->
+    <link rel="image_src" href="https://emc-staffing.com/social.jpg" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Preload critical assets -->
+    <link rel="preload" as="image" href="/hero2.webp" fetchpriority="high" />
+
+    <!-- Preload font -->
+    <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      as="style"
+    />
+
+    <!-- Inline critical CSS -->
+    <style>
+      body { margin: 0; font-family: 'Montserrat', sans-serif; }
+      .nav-fixed { position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 50; }
+      .hero-section { min-height: 70vh; position: relative; display: flex; align-items: center; justify-content: center; }
+      .hero-overlay { position: absolute; inset: 0; background-color: rgba(26, 26, 26, 0.7); }
+      .hero-content { position: relative; z-index: 10; text-align: center; padding: 0 1rem; }
+      .logo { height: 6rem; width: auto; }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" 
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <title>EMC STAFFING - Emergency Management Consultant Staffing</title>
+
+    <!-- Netlify Form Definitions -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="ready-to-work" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="experience"></select>
+      <input type="file" name="resume" />
+    </form>
+
+    <form name="request-consultant" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="organizationName" />
+      <input type="text" name="contactName" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="projectType"></select>
+      <textarea name="projectDescription"></textarea>
+      <select name="timeline"></select>
+    </form>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Voiceflow Chatbot Script Start
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '67ddd0398ef7fa02101b6dcb' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',  // ← Use actual deployed version ID
+              open: true,         // open the chat window on page load
+              autoStart: true    // start the conversation automatically
+            });
+          };
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+          v.type = "text/javascript";
+          s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+    Voiceflow Chatbot Script End -->
+
+    
+  </body>
+</html>
