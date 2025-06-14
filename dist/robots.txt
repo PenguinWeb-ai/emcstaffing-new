@@ -1,0 +1,20 @@
+# www.robotstxt.org
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://emcstaffing.com/sitemap.xml
+
+# Disallow specific paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Allow crawling of important sections
+Allow: /about
+Allow: /ready-to-work
+Allow: /request-consultant
+Allow: /contact
+Allow: /privacy
+Allow: /terms
