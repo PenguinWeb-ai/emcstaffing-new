@@ -36,6 +36,7 @@ function ReadyToWork() {
         lastName: formData.get('lastName'),
         email: formData.get('email'),
         phone: formData.get('phone'),
+        country: formData.get('country'),
       },
       experience: {
         yearsOfExperience: formData.get('experience'),
@@ -47,6 +48,7 @@ function ReadyToWork() {
         preferredSchedule: formData.get('preferredSchedule'),
         availability: formData.get('availability'),
       },
+      termsAccepted: formData.get('terms') === 'on',
     };
 
     fetch(
@@ -342,6 +344,27 @@ function ReadyToWork() {
                   </div>
                   <div>
                     <label
+                      htmlFor="country"
+                      className="block text-sm font-medium text-secondary mb-2"
+                    >
+                      Country <span className="text-primary">*</span>
+                    </label>
+                    <select
+                      id="country"
+                      name="country"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                      required
+                    >
+                      <option value="">Select your country</option>
+                      <option value="United States">United States</option>
+                      <option value="Canada">Canada</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
                       htmlFor="experience"
                       className="block text-sm font-medium text-secondary mb-2"
                     >
@@ -592,6 +615,38 @@ function ReadyToWork() {
                       Please upload your resume in PDF, DOC, or DOCX format.
                     </p>
                   </div>
+
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      name="terms"
+                      className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1"
+                      required
+                    />
+                    <label htmlFor="terms" className="ml-2 text-sm text-secondary">
+                      I agree to the{' '}
+                      <a
+                        href="/terms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-highlight underline"
+                      >
+                        Terms and Conditions
+                      </a>{' '}
+                      and{' '}
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-highlight underline"
+                      >
+                        Privacy Policy
+                      </a>
+                      . <span className="text-primary">*</span>
+                    </label>
+                  </div>
+
                   <button
                     type="submit"
                     className="w-full px-8 py-3 bg-primary text-white hover:bg-highlight transition-colors duration-300 rounded-lg font-semibold"
