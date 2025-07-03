@@ -13,13 +13,10 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
       script.type = 'text/javascript';
       script.onload = function() {
         (window as any).voiceflow.chat.load({
-          verify: { projectID: '681f8dae97a9ce1e0ea9ba5a' },
+          verify: { projectID: '67ddd0398ef7fa02101b6dcb' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production',
-          autostart: true, // Auto-start the conversation
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          },
+          autostart: true,
           render: {
             mode: 'embedded',
             target: document.getElementById('voiceflow-container')
@@ -43,7 +40,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50"
+            className="fixed inset-0 bg-black bg-opacity-50 z-50"
             onClick={onClose}
           />
           <motion.div
@@ -57,16 +54,16 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-[var(--bg-primary)] rounded-[2rem] shadow-xl md:w-[450px] md:h-[800px] w-full h-full border-2 border-black"
+              className="relative bg-white rounded-2xl shadow-xl md:w-[450px] md:h-[700px] w-full h-full border-2 border-gray-200"
             >
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-[var(--text-primary)] hover:opacity-70 transition-opacity text-2xl font-bold"
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors text-2xl font-bold z-10"
                 aria-label="Close modal"
               >
                 ✕
               </button>
-              <div id="voiceflow-container" className="w-full h-full rounded-[2rem] overflow-hidden" />
+              <div id="voiceflow-container" className="w-full h-full rounded-2xl overflow-hidden" />
             </motion.div>
           </motion.div>
         </>
