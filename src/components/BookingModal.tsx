@@ -54,7 +54,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative bg-white rounded-2xl shadow-xl md:w-[450px] md:h-[700px] w-full h-full border-2 border-gray-200"
+              className="relative bg-white rounded-2xl shadow-xl md:w-[450px] md:h-[800px] w-full h-full border-2 border-gray-200"
             >
               <button
                 onClick={onClose}
