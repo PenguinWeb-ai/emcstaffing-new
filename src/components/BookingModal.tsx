@@ -58,7 +58,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             >
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors text-2xl font-bold z-10"
+                className="absolute top-4 left-4 text-white bg-primary hover:bg-highlight transition-colors text-2xl font-bold z-10 w-8 h-8 rounded-full flex items-center justify-center"
                 aria-label="Close modal"
               >
                 ✕
