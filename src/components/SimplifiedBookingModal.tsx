@@ -1,18 +1,22 @@
-import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
 
-function VoiceflowChat() {
-  const [isOpen, setIsOpen] = useState(false);
+interface BookingModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
+export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   useEffect(() => {
     if (isOpen) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
       script.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '67ddd0398ef7fa02101b6dcb' },
+        (window as any).voiceflow.chat.load({
+          verify: { projectID: '681f8dae97a9ce1e0ea9ba5a' },
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production',
-          autostart: true,
+          autostart: true, // Auto-start the conversation
           voice: {
             url: "https://runtime-api.voiceflow.com"
           },
@@ -32,62 +36,41 @@ function VoiceflowChat() {
   }, [isOpen]);
 
   return (
-    <>
-      {/* Meeting Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        style={{
-          position: 'fixed',
-          bottom: '1.5rem',
-          right: '1.5rem',
-          zIndex: 99999,
-          padding: '1rem 2rem',
-          borderRadius: '9999px',
-          background: 'linear-gradient(135deg, #ff1493 0%, #ff6b00 100%)',
-          color: 'white',
-          border: 'none',
-          cursor: 'pointer',
-          fontWeight: '600'
-        }}
-      >
-        {isOpen ? 'CLOSE CHAT' : 'BOOK MEETING'}
-      </button>
-
-      {/* Modal */}
+    <AnimatePresence>
       {isOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            bottom: '6rem',
-            right: '1.5rem',
-            zIndex: 50,
-            width: '450px',
-            height: '800px',
-            backgroundColor: 'white',
-            borderRadius: '2rem',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-            border: '2px solid black'
-          }}
-        >
-          <button
-            onClick={() => setIsOpen(false)}
-            style={{
-              position: 'absolute',
-              top: '1rem',
-              right: '1rem',
-              background: 'none',
-              border: 'none',
-              fontSize: '1.5rem',
-              cursor: 'pointer'
-            }}
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50"
+            onClick={onClose}
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed md:bottom-24 md:right-6 z-50 md:transform-none inset-0 md:inset-auto"
           >
-            ✕
-          </button>
-          <div id="voiceflow-container" style={{ width: '100%', height: '100%', borderRadius: '2rem', overflow: 'hidden' }} />
-        </div>
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative bg-[var(--bg-primary)] rounded-[2rem] shadow-xl md:w-[450px] md:h-[800px] w-full h-full border-2 border-black"
+            >
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-[var(--text-primary)] hover:opacity-70 transition-opacity text-2xl font-bold"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+              <div id="voiceflow-container" className="w-full h-full rounded-[2rem] overflow-hidden" />
+            </motion.div>
+          </motion.div>
+        </>
       )}
-    </>
+    </AnimatePresence>
   );
 }
-
-export default VoiceflowChat;
