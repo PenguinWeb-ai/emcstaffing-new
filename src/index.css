@@ -99,7 +99,7 @@ img {
   right: 1.5rem;
   z-index: 99999;
   padding: 1rem 2rem;
-  border-radius: 9999px;
+  border-radius: 0.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   background: linear-gradient(135deg, #8a122d 0%, #6a0f24 100%);
   transition: all 0.3s ease;
